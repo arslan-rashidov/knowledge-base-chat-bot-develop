@@ -10,7 +10,7 @@ cd /workspace
 
 ## Setting Environment
 ```
-conda create --name kb_dev python==3.10
+conda create --name kb_dev python==3.10 --yes
 conda activate kb_dev
 ```
 
