@@ -1,5 +1,7 @@
 # knowledge-base-chat-bot-develop
 
+# Preparation
+
 ## Anaconda Installation
 ```
 cd /tmp
@@ -17,4 +19,16 @@ conda activate kb_dev
 ## Install Dependencies
 ```
 pip install vllm
+```
+
+# VLLM Model Servings
+
+## QWEN-2.5-VL(https://github.com/QwenLM/Qwen2.5-VL)
+### 3B-Instruct
+```
+vllm serve Qwen/Qwen2.5-VL-3B-Instruct --port 8000 --host 0.0.0.0 --dtype bfloat16
+```
+
+### 7B-Instruct
+```
 ```
