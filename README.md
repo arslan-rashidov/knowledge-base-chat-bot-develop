@@ -26,6 +26,7 @@ pip install vllm
 ## QWEN-2.5-VL(https://github.com/QwenLM/Qwen2.5-VL)
 ### 3B-Instruct
 ```
+pip install "transformers<4.53.0"
 vllm serve Qwen/Qwen2.5-VL-3B-Instruct --port 8000 --host 0.0.0.0 --dtype bfloat16
 ```
 
