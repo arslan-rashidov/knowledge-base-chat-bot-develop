@@ -33,3 +33,11 @@ vllm serve Qwen/Qwen2.5-VL-3B-Instruct --port 8000 --host 0.0.0.0 --dtype bfloat
 ### 7B-Instruct
 ```
 ```
+
+# Utils
+
+### Free used by vllm VRAM
+```
+sudo fuser -v /dev/nvidia*
+kill -9 ...
+```
