@@ -1,26 +1,20 @@
-import spacy
-import src.spacy.ru2
+def simple_chunking(text, size, overlap):
+    """
+    Chunks the given text into segments of n characters with overlap.
 
+    Args:
+    text (str): The text to be chunked.
+    size (int): The number of characters in each chunk.
+    overlap (int): The number of overlapping characters between chunks.
 
-def dynamic_chunking(text, max_chunk_size=200):
-    nlp = spacy.load('ru2_combined_400ks_96')
-    nlp.add_pipe(nlp.create_pipe('sentencizer'), first=True)
+    Returns:
+    List[str]: A list of text chunks.
+    """
+    chunks = []  # Initialize an empty list to store the chunks
 
-    doc = nlp(text)
-    chunks = []
-    current_chunk = []
-    current_size = 0
+    # Loop through the text with a step size of (size - overlap)
+    for i in range(0, len(text), size - overlap):
+        # Append a chunk of text from index i to i + size to the chunks list
+        chunks.append(text[i:i + size])
 
-    for sent in doc.sents:
-        if current_size + len(sent.text) > max_chunk_size:
-            chunks.append(" ".join(current_chunk))
-            current_chunk = [sent.text]
-            current_size = len(sent.text)
-        else:
-            current_chunk.append(sent.text)
-            current_size += len(sent.text)
-
-    if current_chunk:
-        chunks.append(" ".join(current_chunk))
-
-    return chunks
+    return chunks  # Return the list of text chunks
