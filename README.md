@@ -18,7 +18,7 @@ conda activate kb_dev
 
 ## Install Dependencies
 ```
-pip install vllm
+pip install numpy==1.* docx2txt langchain_huggingface langchain_core langchain_community FlagEmbedding docling streamlit faiss-gpu
 ```
 if vllm serving VL crashes:
 ```
@@ -48,12 +48,21 @@ vllm serve Qwen/Qwen2.5-VL-3B-Instruct-AWQ --port 8000 --host 0.0.0.0 --dtype bf
 vllm serve Qwen/Qwen2.5-VL-32B-Instruct-AWQ --port 8000 --host 0.0.0.0 --dtype bfloat16 --kv-cache-dtype fp8   --max-model-len 512   --max-num-batched-tokens 512   --max-num-seqs 1   --enforce-eager   --tensor-parallel-size 1 --gpu_memory_utilization 0.95
 ```
 
+### QWEN-14B
+```
+vllm serve Qwen/Qwen3-14B-AWQ --port 8000 --host 0.0.0.0 --max-model-len 9192 --enforce-eager  --tensor-parallel-size 1 --gpu_memory_utilization 0.8
+```
+
 # Utils
 
 ### Free used by vllm VRAM
 ```
 sudo fuser -v /dev/nvidia*
 kill -9 ...
+```
+
+```
+kill -9 $(lsof -t -i:9000)
 ```
 
 # GPU Usage Results
