@@ -18,7 +18,7 @@ conda activate kb_dev
 
 ## Install Dependencies
 ```
-pip install numpy==1.* docx2txt langchain_huggingface langchain_core langchain_community FlagEmbedding docling streamlit faiss-gpu vllm
+pip install numpy==1.* docx2txt langchain_huggingface langchain_core langchain_community FlagEmbedding docling streamlit faiss-gpu vllm pymupdf pytesseract
 ```
 if vllm serving VL crashes:
 ```
