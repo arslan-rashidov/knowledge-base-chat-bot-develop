@@ -21,7 +21,7 @@ conda activate kb_dev
 sudo apt install tesseract-ocr tesseract-ocr-rus
 ```
 ```
-pip install numpy==1.* docx2txt langchain_huggingface langchain_core langchain_community FlagEmbedding docling streamlit faiss-gpu vllm pymupdf pytesseract
+pip install numpy==1.* docx2txt langchain_huggingface langchain_core langchain_community FlagEmbedding docling streamlit faiss-gpu vllm pymupdf pytesseract FlashInfer
 ```
 if vllm serving VL crashes:
 ```
