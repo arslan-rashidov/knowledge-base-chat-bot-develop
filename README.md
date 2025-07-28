@@ -56,6 +56,11 @@ vllm serve Qwen/Qwen2.5-VL-32B-Instruct-AWQ --port 8000 --host 0.0.0.0 --dtype b
 vllm serve Qwen/Qwen3-14B-AWQ --port 8000 --host 0.0.0.0 --max-model-len 9192 --enforce-eager  --tensor-parallel-size 1 --gpu_memory_utilization 0.8
 ```
 
+### Vikhr
+```
+vllm serve --dtype half --max-model-len 32000 -tp 1 Vikhrmodels/Vikhr-Llama3.1-8B-Instruct-R-21-09-24 --gpu_memory_utilization 0.8
+```
+
 # Utils
 
 ### Free used by vllm VRAM
